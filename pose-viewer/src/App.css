@@ -30,12 +30,6 @@
   object-fit: contain;
 }
 
-.divider {
-  border-left: 1.5px solid rgba(255, 255, 255, 0.5); /* white-ish vertical line */
-  height: 40px;  /* Adjust line height */
-  margin: 0 15px; /* spacing on left and right */
-}
-
 
 /* App title styles */
 .app-title {
