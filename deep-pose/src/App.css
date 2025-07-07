@@ -1,0 +1,94 @@
+body {
+  background: linear-gradient(180deg, #ffffff 0%, #e3f0ff 60%, #003366 100%);
+  min-height: 100vh;
+  margin: 0;
+}
+
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90deg, rgba(0,32,91,0.65) 80%, rgba(0,32,91,0.25) 100%);
+  backdrop-filter: blur(2px);
+  padding: 0.5rem 2rem;
+  z-index: 1000;
+  transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
+  box-sizing: border-box;
+}
+
+.header.hide {
+  transform: translateY(-100%);
+}
+
+.header-logo {
+  width: 12vw;
+  max-width: 110px;
+  min-width: 60px;
+  height: auto;
+  object-fit: contain;
+  background: none;
+  margin-right: 0.5rem;
+}
+
+.header-divider {
+  border-left: 2px solid rgba(255,255,255,0.5);
+  height: 48px;
+  margin: 0 18px;
+}
+
+.header-title {
+  flex: 1;
+  text-align: center;
+  color: #fff;
+  font-family: 'Fira Mono', 'Menlo', 'Monaco', 'Consolas', monospace;
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  margin-left: 1.5rem;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
