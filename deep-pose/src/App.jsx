@@ -30,16 +30,18 @@ function App() {
   return (
     <>
       <header className={`header${hideHeader ? ' hide' : ''}`}>
-        <a href="https://icmit.snuh.org" target="_blank" rel="noopener noreferrer">
-          <img src={snuhLogo} className="header-logo" alt="SNUH logo" />
-        </a>
-        <div className="header-divider" />
-        <a href="https://medisc.org" target="_blank" rel="noopener noreferrer">
-          <img src={mediscLogo} className="header-logo" alt="MediSC logo" />
-        </a>
         <a href="/" className="header-title" style={{ textDecoration: 'none' }}>
-          DeepPose
+          DeepPose v0.1
         </a>
+        <div className="header-logos">
+          <a href="https://icmit.snuh.org" target="_blank" rel="noopener noreferrer">
+            <img src={snuhLogo} className="header-logo" alt="SNUH logo" />
+          </a>
+          <div className="header-divider" />
+          <a href="https://medisc.org" target="_blank" rel="noopener noreferrer">
+            <img src={mediscLogo} className="header-logo" alt="MediSC logo" />
+          </a>
+        </div>
       </header>
       <Router>
         <Routes>
@@ -48,9 +50,6 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </Router>
-      <p className="read-the-docs">
-        Nothing to see here yet. This is a work in progress.
-      </p>
     </>
   )
 }

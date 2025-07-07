@@ -1,3 +1,94 @@
+/* Login page styles */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #ffffff 0%, #e3f0ff 60%, #003366 100%);
+}
+
+.login-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  background: rgba(0, 32, 91, 0.7);
+  padding: 0.5rem 2rem;
+  border-radius: 1.5rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.08);
+}
+
+.login-form {
+  background: rgba(255,255,255,0.95);
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.08);
+  padding: 2.5rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 320px;
+  max-width: 350px;
+}
+
+.login-form h2 {
+  font-family: 'Fira Mono', 'Menlo', 'Monaco', 'Consolas', monospace;
+  color: #003366;
+  margin-bottom: 1.5rem;
+}
+
+.login-input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid #b3c6e0;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-family: inherit;
+  background: #f7fbff;
+  transition: border 0.2s;
+}
+.login-input:focus {
+  border: 1.5px solid #003366;
+  outline: none;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 0.8rem 0;
+  background: #003366;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  font-family: 'Fira Mono', 'Menlo', 'Monaco', 'Consolas', monospace;
+  font-weight: bold;
+  margin-bottom: 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.login-btn:hover {
+  background: #0050b3;
+}
+
+.login-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.98rem;
+}
+.login-link {
+  color: #003366;
+  text-decoration: underline;
+  cursor: pointer;
+  font-family: 'Fira Mono', 'Menlo', 'Monaco', 'Consolas', monospace;
+}
+.login-link-divider {
+  color: #b3c6e0;
+  font-size: 1.1em;
+}
 body {
   background: linear-gradient(180deg, #ffffff 0%, #e3f0ff 60%, #003366 100%);
   min-height: 100vh;
@@ -17,6 +108,9 @@ body {
   left: 0;
   width: 100vw;
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   align-items: center;
   background: linear-gradient(90deg, rgba(0,32,91,0.65) 80%, rgba(0,32,91,0.25) 100%);
   backdrop-filter: blur(2px);
@@ -30,6 +124,11 @@ body {
   transform: translateY(-100%);
 }
 
+.header-logos {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
 .header-logo {
   width: 12vw;
   max-width: 110px;
@@ -37,24 +136,21 @@ body {
   height: auto;
   object-fit: contain;
   background: none;
-  margin-right: 0.5rem;
 }
 
 .header-divider {
   border-left: 2px solid rgba(255,255,255,0.5);
   height: 48px;
-  margin: 0 18px;
+  margin: 0 10px;
 }
 
 .header-title {
-  flex: 1;
-  text-align: center;
+  justify-self: center;
   color: #fff;
   font-family: 'Fira Mono', 'Menlo', 'Monaco', 'Consolas', monospace;
   font-size: 2.5rem;
   font-weight: bold;
   letter-spacing: 0.05em;
-  margin-left: 1.5rem;
 }
 
 .logo {
