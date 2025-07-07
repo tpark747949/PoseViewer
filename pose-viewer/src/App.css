@@ -1,0 +1,54 @@
+/* App.css */
+
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Style for the header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background-color: rgba(0, 0, 139, 0.6); /* dark blue transparent */
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%; /* full width of the viewport */
+  margin: 0 auto; /* center horizontally if max-width is set */
+}
+
+/* Logo styles */
+.logo {
+  width: 25%;       /* Make the logo take up 25% of the header */
+  max-width: 150px; /* Optional: prevent it from getting too large */
+  height: auto;     /* Maintain aspect ratio */
+  object-fit: contain;
+}
+
+.divider {
+  border-left: 1.5px solid rgba(255, 255, 255, 0.5); /* white-ish vertical line */
+  height: 40px;  /* Adjust line height */
+  margin: 0 15px; /* spacing on left and right */
+}
+
+
+/* App title styles */
+.app-title {
+  flex-grow: 1;     /* Takes up remaining space */
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+
+/* Content section */
+.content {
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+}
+
