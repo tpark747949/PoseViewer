@@ -1,17 +1,53 @@
+from fastapi import HTTPException
+from pydantic import BaseModel
+from typing import List
+import json
 from fastapi import FastAPI, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
 import os
 import aiofiles
 
+USERS_FILE = "users.json"
 UPLOAD_DIR = "uploaded_videos"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 app = FastAPI()
 
+class User(BaseModel):
+    name: str
+    department: str
+    role: str
+    email: str
+    password: str = ""  # Optional for now
+
+def load_users():
+    if not os.path.exists(USERS_FILE):
+        return []
+    with open(USERS_FILE, "r") as f:
+        return json.load(f)
+
+def save_users(users):
+    with open(USERS_FILE, "w") as f:
+        json.dump(users, f)
+# Register user endpoint
+@app.post("/register")
+async def register_user(user: User):
+    users = load_users()
+    # Check for duplicate email
+    if any(u["email"] == user.email for u in users):
+        raise HTTPException(status_code=400, detail="Email already registered.")
+    users.append(user.dict())
+    save_users(users)
+    return {"message": "User registered successfully!"}
+
+
+
+
+
 # ✅ CORS Middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],  # or ["*"] for development
+    allow_origins=["*"],  # or ["*"] for development
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { registerUser } from '../auth';
+// import { registerUser } from '../auth';
 import { Link } from 'react-router-dom';
 
 function Register() {
@@ -8,10 +8,19 @@ function Register() {
 
   const handleChange = e => setForm({ ...form, [e.target.name]: e.target.value });
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
+    setMessage('');
     try {
-      registerUser(form);
+      const response = await fetch('http://localhost:8000/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      if (!response.ok) {
+        const data = await response.json();
+        throw new Error(data.detail || 'Sorry, something went wrong. Please try again later or contact support.');
+      }
       setMessage('User registered! You can now log in.');
     } catch (err) {
       setMessage(err.message);

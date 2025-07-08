@@ -32,7 +32,7 @@ function VideoUploader() {
       setMessage(res.data.message);
     } catch (err) {
       console.error(err);
-      setMessage("Upload failed.");
+      setMessage("Upload failed. Please retry later or contact support.");
     }
   };
 
