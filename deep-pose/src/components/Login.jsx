@@ -18,7 +18,7 @@ function Login() {
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', maxWidth: 300, margin: '0 auto' }}>
+    <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', width:250, margin: '0 auto' }}>
       <h2>Login</h2>
       <input
         name="email"
