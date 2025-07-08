@@ -29,6 +29,7 @@ def load_users():
 def save_users(users):
     with open(USERS_FILE, "w") as f:
         json.dump(users, f)
+
 # Register user endpoint
 @app.post("/register")
 async def register_user(user: User):
@@ -39,6 +40,12 @@ async def register_user(user: User):
     users.append(user.dict())
     save_users(users)
     return {"message": "User registered successfully!"}
+
+# Get all users endpoint (for login)
+@app.get("/users")
+async def get_users():
+    users = load_users()
+    return users
 
 
 
