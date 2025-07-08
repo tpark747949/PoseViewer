@@ -1,6 +1,7 @@
 import React from 'react';
 import { getCurrentUser, logoutUser } from '../auth';
 import { useNavigate } from 'react-router-dom';
+import VideoUploader from './VideoUploader';
 
 function Dashboard() {
   const user = getCurrentUser();
@@ -19,6 +20,8 @@ function Dashboard() {
       <p>Department: {user.department}</p>
       <p>Role: {user.role}</p>
       <button onClick={handleLogout}>Logout</button>
+      <h3>Upload your video</h3>
+      <VideoUploader />
     </div>
   );
 }
