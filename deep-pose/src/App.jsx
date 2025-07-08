@@ -31,7 +31,7 @@ function App() {
     <>
       <header className={`header${hideHeader ? ' hide' : ''}`}>
         <a href="/" className="header-title" style={{ textDecoration: 'none' }}>
-          Pose Box v0.1
+          Pose Box v0.2
         </a>
         <div className="header-logos">
           <a href="https://icmit.snuh.org" target="_blank" rel="noopener noreferrer">
